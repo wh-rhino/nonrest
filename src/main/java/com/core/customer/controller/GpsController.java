@@ -1,9 +1,6 @@
 package com.core.customer.controller;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 import com.core.customer.document.Gps;
