@@ -1,6 +1,7 @@
 package com.core.customer.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.List;
 import com.core.customer.document.Gps;
@@ -46,22 +47,28 @@ class GpsController{
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
         ResponseEntity<String> response = customerSitrack.exchange(UriRaspiLogerReport, HttpMethod.GET, entity, String.class);   
 
+        ObjectMapper mapper = new ObjectMapper();
         try {
-            ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(response.getBody());
             System.out.println("response: "+ root.toString());
             Iterator<JsonNode> iter=root.iterator();
             while(iter.hasNext()){
                 JsonNode parameterNode=iter.next(); 
-                System.out.println("parameterNode : " + parameterNode);
-                //Jul 24, 1983 3:41:21 AM
-                //calcular edad 
-                System.out.println("dateOfBirth: "+ parameterNode.get("fechaNacimiento").toString());
-                //ordenar
+                String bd = parameterNode.get("fechaNacimiento").toString();
+                String [] birthdate = bd.split(",");
+                String start = birthdate[1].toString().substring(0, 5);
+                start = start.trim();
+                LocalDate localDate = LocalDate.now();
+                String now = localDate.toString();
+                now = now.substring(0, 4);
+                int presently = Integer.valueOf(now);
+                int age = Integer.valueOf(start);
+                age = presently - age;
+                System.out.println("age : " + age);
             }
         } catch (IOException e) {
             e.printStackTrace();
-	    }
+        }
     }
 
     /**
