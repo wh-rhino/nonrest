@@ -1,20 +1,17 @@
 package com.core.customer.document;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Customer {    
-    @Id
-    private ObjectId id;
+    private String id;
     private String firstName;
     private String secondName;
 
     public Customer() {
     }
 
-    public Customer(String firstName, String secondName, ObjectId id) {
+    public Customer(String firstName, String secondName, String id) {
             this.id = id;
             this.firstName = firstName;
             this.secondName = secondName;
@@ -25,10 +22,10 @@ public class Customer {
     }
 
     public String getId() {
-        return id.toHexString();
+        return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
