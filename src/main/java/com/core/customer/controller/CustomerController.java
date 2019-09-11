@@ -18,19 +18,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 
 @RestController
 class CustomerController{
 
-    private final CustomerRepository repository;
-    private final CustomerResourceAssambler assambler;
-
-    CustomerController(CustomerRepository repository,
-        CustomerResourceAssambler assambler){
-            this.repository = repository;
-            this.assambler = assambler;
-    }
+    @Autowired(required = true)
+    CustomerRepository repository;
+    @Autowired(required = true)
+    CustomerResourceAssambler assambler;
 
     /**
      * curl http://localhost:8080/customers/5d4ef92b66dca14d45fdffbd

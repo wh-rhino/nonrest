@@ -8,7 +8,7 @@ import org.springframework.hateoas.ResourceAssembler;
 import org.springframework.stereotype.Component;
 
 @Component
-class CustomerResourceAssambler implements ResourceAssembler<Customer, Resource<Customer>>{
+public class CustomerResourceAssambler implements ResourceAssembler<Customer, Resource<Customer>>{
     
     @Override
     public Resource<Customer> toResource(Customer customer){
