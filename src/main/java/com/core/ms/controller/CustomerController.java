@@ -1,13 +1,13 @@
-package com.core.customer.controller;
+package com.core.ms.controller;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.core.customer.document.Customer;
-import com.core.customer.exception.CustomerNotFoundException;
-import com.core.customer.interfaz.CustomerRepository;
+import com.core.ms.document.Customer;
+import com.core.ms.exception.CustomerNotFoundException;
+import com.core.ms.interfaz.CustomerRepository;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

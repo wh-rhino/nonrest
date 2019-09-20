@@ -1,8 +1,8 @@
-package com.core.customer.controller;
+package com.core.ms.controller;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 
-import com.core.customer.document.Customer;
+import com.core.ms.document.Customer;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.ResourceAssembler;
 import org.springframework.stereotype.Component;

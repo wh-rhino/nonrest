@@ -1,6 +1,6 @@
-package com.core.customer.advice;
+package com.core.ms.advice;
 
-import com.core.customer.exception.CustomerNotFoundException;
+import com.core.ms.exception.CustomerNotFoundException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

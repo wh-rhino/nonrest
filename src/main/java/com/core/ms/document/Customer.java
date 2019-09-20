@@ -1,4 +1,4 @@
-package com.core.customer.document;
+package com.core.ms.document;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
