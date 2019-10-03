@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  customer:
+    image: customer
+    build: .
+    ports:
+      - 3000:3000
